@@ -2,10 +2,12 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
 
+PROXY = "185.199.228.220:7300"
+
 options = Options()
+options.add_argument("--proxy-server=%s" % PROXY)
 options.add_argument("--start-maximized")
 options.add_argument("--ignore-certificate-errors")
 service = Service(executable_path='C:\webdriver\chromedriver')
